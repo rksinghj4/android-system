@@ -1,9 +1,10 @@
-package com.androidsystem
+package com.androidsystem.connectivitymanager
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
 import android.util.Log
+import com.androidsystem.TAG
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow

@@ -1,13 +1,11 @@
-package com.androidsystem
+package com.androidsystem.connectivitymanager
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -37,10 +35,12 @@ class NetworkConnectivityActivity : ComponentActivity() {
 
                     Column(
                         modifier = Modifier.fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
+                        verticalArrangement = Arrangement.SpaceEvenly,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(text = "Network status: $connectivityState")
+                        
+                        Text(text = "Test Hint: Airplane mode - on/off")
                     }
                 }
             }

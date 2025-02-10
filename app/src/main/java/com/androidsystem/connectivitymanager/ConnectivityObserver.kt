@@ -1,4 +1,4 @@
-package com.androidsystem
+package com.androidsystem.connectivitymanager
 
 import kotlinx.coroutines.flow.Flow
 

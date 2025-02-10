@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AndroidSystemLearning"
         tools:targetApi="31">
         <activity
-            android:name=".NetworkConnectivityActivity"
+            android:name=".connectivitymanager.NetworkConnectivityActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
