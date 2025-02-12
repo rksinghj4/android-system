@@ -10,7 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 data class Actions(
-    val onNetworkStatus: () -> Unit = {}
+    val onNetworkStatus: () -> Unit = {},
+    val onAlarmManager: () -> Unit = {}
 )
 
 @Composable
@@ -24,14 +25,12 @@ fun MainScreen(clickActions: Actions) {
             Text(text = "ConnectivityManager")
         }
 
-        Button(onClick = {
-
-        }) {
+        Button(onClick = {}) {
             Text(text = "PowerManager")
         }
 
 
-        Button(onClick = {}) {
+        Button(onClick = clickActions.onAlarmManager) {
             Text(text = "AlarmManager")
         }
 

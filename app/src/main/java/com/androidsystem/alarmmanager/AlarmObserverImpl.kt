@@ -45,7 +45,7 @@ class AlarmObserverImpl(private val context: Context) : AlarmObserver {
         alarmManager.cancel(
             PendingIntent.getBroadcast(
                 context,
-                alarmItem.hashCode(),//requestCode
+                alarmItem.hashCode(),//same requestCode to cancel the alarm
                 Intent(context, AlarmReceiver::class.java),
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
