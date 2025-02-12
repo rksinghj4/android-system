@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- NotificationManager -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" /><!--Wake lock permission-->
+    <!-- For requesting Ignore Battery Optimization -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
         android:name=".MySystemApplication"
@@ -19,7 +21,7 @@
         android:theme="@style/Theme.AndroidSystemLearning"
         tools:targetApi="31">
         <activity
-            android:name=".powermanager.ProximityManagerActivity"
+            android:name=".powermanager.WakeUpLocksActivity"
             android:exported="false" />
         <activity
             android:name=".powermanager.PowerManagerOptionsActivity"

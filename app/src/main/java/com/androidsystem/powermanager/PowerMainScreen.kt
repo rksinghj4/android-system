@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 data class PowerManagerActions(
-    val onProximitySensor: () -> Unit = {},
+    val onWakeupLocks: () -> Unit = {},
 )
 
 @Composable
@@ -20,16 +20,16 @@ fun PowerMainScreen(powerManagerActions: PowerManagerActions) {
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = powerManagerActions.onProximitySensor) {
-            Text(text = "Proximity Sensor")
+        Button(onClick = powerManagerActions.onWakeupLocks) {
+            Text(text = "Wakeup Locks")
         }
 
-        Button(onClick = powerManagerActions.onProximitySensor) {
-            Text(text = "Proximity Sensor")
+        Button(onClick = powerManagerActions.onWakeupLocks) {
+            Text(text = "")
         }
 
-        Button(onClick = powerManagerActions.onProximitySensor) {
-            Text(text = "Proximity Sensor")
+        Button(onClick = powerManagerActions.onWakeupLocks) {
+            Text(text = "")
         }
 
         Button(onClick = {}) {

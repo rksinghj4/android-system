@@ -22,8 +22,8 @@ class PowerManagerOptionsActivity : ComponentActivity() {
     }
 
     private fun clickActions(activity: Activity) = PowerManagerActions(
-        onProximitySensor = {
-            ProximityManagerActivity.show(fromActivity = activity)
+        onWakeupLocks = {
+            WakeUpLocksActivity.show(fromActivity = activity)
         }
     )
 
