@@ -1,4 +1,4 @@
-package com.androidsystem
+package com.androidsystem.powermanager
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,44 +9,42 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
-data class Actions(
-    val onNetworkStatus: () -> Unit = {},
-    val onAlarmManager: () -> Unit = {},
-    val onPowerManager: () -> Unit = {}
+data class PowerManagerActions(
+    val onProximitySensor: () -> Unit = {},
 )
 
 @Composable
-fun MainScreen(clickActions: Actions) {
+fun PowerMainScreen(powerManagerActions: PowerManagerActions) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = clickActions.onNetworkStatus) {
-            Text(text = "ConnectivityManager")
+        Button(onClick = powerManagerActions.onProximitySensor) {
+            Text(text = "Proximity Sensor")
         }
 
-        Button(onClick = clickActions.onPowerManager) {
-            Text(text = "PowerManager")
+        Button(onClick = powerManagerActions.onProximitySensor) {
+            Text(text = "Proximity Sensor")
         }
 
-        Button(onClick = clickActions.onAlarmManager) {
-            Text(text = "AlarmManager")
-        }
-
-        Button(onClick = {}) {
-            Text(text = "NotificationManager")
-        }
-        Button(onClick = {}) {
-            Text(text = "KeyGuardManager")
+        Button(onClick = powerManagerActions.onProximitySensor) {
+            Text(text = "Proximity Sensor")
         }
 
         Button(onClick = {}) {
-            Text(text = "LocationManager")
+            Text(text = "")
+        }
+        Button(onClick = {}) {
+            Text(text = "")
         }
 
         Button(onClick = {}) {
-            Text(text = "WifiManager")
+            Text(text = "")
+        }
+
+        Button(onClick = {}) {
+            Text(text = "")
         }
     }
 }

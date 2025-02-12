@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.androidsystem.alarmmanager.AlarmActivity
 import com.androidsystem.connectivitymanager.NetworkConnectivityActivity
+import com.androidsystem.powermanager.PowerManagerOptionsActivity
 import com.androidsystem.ui.theme.AndroidSystemLearningTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,12 +35,15 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-fun clickActions(activity: Activity) = Actions(
+private fun clickActions(activity: Activity) = Actions(
     onNetworkStatus = {
         NetworkConnectivityActivity.show(activity = activity)
     },
     onAlarmManager = {
         AlarmActivity.show(activity)
+    },
+    onPowerManager = {
+        PowerManagerOptionsActivity.show(activity)
     }
 )
 
