@@ -28,6 +28,10 @@ class MemoryAllocationTestActivity : ComponentActivity() {
 
         Thread() {
             Thread.sleep(5 * 1000)
+            /**
+             * Observe the Log cat - sometime .5MB (ignored)
+             * sometime 1MB memory usage increased due to this thread
+             */
             memoryProfileLogger(source = "In side Thread after delay")
         }.start()
 
