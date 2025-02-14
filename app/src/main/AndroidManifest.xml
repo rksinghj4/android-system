@@ -5,9 +5,14 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- AlarmManager -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- NotificationManager -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" /><!--Wake lock permission-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Wake lock permission -->
     <!-- For requesting Ignore Battery Optimization -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!--
+      without android:largeHeap="true" - maxMemoryInMB : 192
+      with android:largeHeap="true" - maxMemoryInMB : 512 : GC will run for longer time -> App lag
+    -->
 
     <application
         android:name=".MySystemApplication"
@@ -20,6 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidSystemLearning"
         tools:targetApi="31">
+        <activity
+            android:name=".memory.MemoryAllocationTestActivity"
+            android:exported="false" />
         <activity
             android:name=".powermanager.WakeUpLocksActivity"
             android:exported="false" />

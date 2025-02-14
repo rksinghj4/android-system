@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 data class Actions(
+    val onMemoryUsage: () -> Unit = {},
     val onNetworkStatus: () -> Unit = {},
     val onAlarmManager: () -> Unit = {},
     val onPowerManager: () -> Unit = {}
@@ -22,6 +23,10 @@ fun MainScreen(clickActions: Actions) {
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Button(onClick = clickActions.onMemoryUsage) {
+            Text(text = "Memory Usage")
+        }
+
         Button(onClick = clickActions.onNetworkStatus) {
             Text(text = "ConnectivityManager")
         }
@@ -47,6 +52,13 @@ fun MainScreen(clickActions: Actions) {
 
         Button(onClick = {}) {
             Text(text = "WifiManager")
+        }
+
+        Button(onClick = {}) {
+            /**
+             * https://yggr.medium.com/exploring-androids-batterymanager-api-8f64951fd9f6
+             */
+            Text(text = "Battery manager")
         }
     }
 }

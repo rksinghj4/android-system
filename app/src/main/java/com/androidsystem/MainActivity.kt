@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.androidsystem.alarmmanager.AlarmActivity
 import com.androidsystem.connectivitymanager.NetworkConnectivityActivity
+import com.androidsystem.memory.MemoryAllocationTestActivity
 import com.androidsystem.powermanager.PowerManagerOptionsActivity
 import com.androidsystem.ui.theme.AndroidSystemLearningTheme
 
@@ -36,6 +37,9 @@ class MainActivity : ComponentActivity() {
 }
 
 private fun clickActions(activity: Activity) = Actions(
+    onMemoryUsage = {
+        MemoryAllocationTestActivity.show(activity)
+    },
     onNetworkStatus = {
         NetworkConnectivityActivity.show(activity = activity)
     },
